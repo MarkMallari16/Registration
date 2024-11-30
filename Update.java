@@ -12,17 +12,28 @@ import javax.swing.JOptionPane;
  */
 public class Update extends javax.swing.JFrame {
 
-    public static String newIdString, newFirstName, newLastName;
+    public static String newIdString, newFirstName, newMiddleName, newLastName, newAddress, newPlaceOfBirth,
+            newDateOfBirth, newGender, newNationality, newPhoneNumber, newUsername;
+
     public static int newIdInt;
     public static Database db = new Database();
     public static Registration reg;
 
-    public Update(int id, String firstName, String lastName) {
+    public Update(int id, String firstName, String middleName, String lastName, String address, String placeOfBirth, String dateOfBirth, String gender,
+            String nationality, String phoneNumber, String username) {
         initComponents();
 
         txtFieldId.setText("" + id);
         txtFieldFirstName.setText(firstName);
+        txtFieldMiddleName.setText(middleName);
         txtFieldLastName.setText(lastName);
+        txtFieldAddress.setText(address);
+        txtFieldPlaceOfBirth.setText(placeOfBirth);
+        txtFieldDateOfBirth.setText(dateOfBirth);
+        txtFieldGender.setText(gender);
+        txtFieldNationality.setText(nationality);
+        txtFieldPhoneNumber.setText(phoneNumber);
+        txtFieldUsername.setText(username);
 
     }
 
@@ -39,14 +50,32 @@ public class Update extends javax.swing.JFrame {
         txtFieldId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtFieldFirstName = new javax.swing.JTextField();
-        txtFieldLastName = new javax.swing.JTextField();
+        txtFieldMiddleName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtFieldLastName = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtFieldAddress = new javax.swing.JTextField();
+        txtFieldPhoneNumber = new javax.swing.JTextField();
+        txtFieldDateOfBirth = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtFieldPlaceOfBirth = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtFieldNationality = new javax.swing.JTextField();
+        txtFieldGender = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtFieldUsername = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ID");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 20)); // NOI18N
+        jLabel1.setText("ID:");
 
         txtFieldId.setEnabled(false);
         txtFieldId.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +84,7 @@ public class Update extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("First Name:");
+        jLabel2.setText("First Name");
 
         txtFieldFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,13 +92,13 @@ public class Update extends javax.swing.JFrame {
             }
         });
 
-        txtFieldLastName.addActionListener(new java.awt.event.ActionListener() {
+        txtFieldMiddleName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldLastNameActionPerformed(evt);
+                txtFieldMiddleNameActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Last Name:");
+        jLabel3.setText("Middle Name");
 
         btnUpdate.setBackground(new java.awt.Color(51, 102, 255));
         btnUpdate.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -91,48 +120,200 @@ public class Update extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel4.setText("Registration Information");
+
+        txtFieldLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldLastNameActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Last Name");
+
+        jLabel6.setText("Address");
+
+        txtFieldAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldAddressActionPerformed(evt);
+            }
+        });
+
+        txtFieldPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldPhoneNumberActionPerformed(evt);
+            }
+        });
+
+        txtFieldDateOfBirth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldDateOfBirthActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Phone Number");
+
+        jLabel8.setText("Date of Birth");
+
+        jLabel9.setText("Nationality");
+
+        txtFieldPlaceOfBirth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldPlaceOfBirthActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Place of Birth");
+
+        txtFieldNationality.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldNationalityActionPerformed(evt);
+            }
+        });
+
+        txtFieldGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldGenderActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Gender");
+
+        txtFieldUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldUsernameActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Username");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
+                    .addComponent(jLabel12)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1)
-                            .addComponent(txtFieldId, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                            .addComponent(txtFieldFirstName)
-                            .addComponent(txtFieldLastName)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btnDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtFieldAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel10)
+                                .addComponent(txtFieldPlaceOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(txtFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(txtFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtFieldMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(txtFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(txtFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtFieldNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel9))
+                                    .addGap(12, 12, 12)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtFieldPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(432, 432, 432)
+                                    .addComponent(btnDelete)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnUpdate))))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFieldAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jLabel2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel5)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFieldMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFieldPlaceOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFieldNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))
+                    .addComponent(txtFieldPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addComponent(txtFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -146,17 +327,27 @@ public class Update extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldFirstNameActionPerformed
 
-    private void txtFieldLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldLastNameActionPerformed
+    private void txtFieldMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldMiddleNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldLastNameActionPerformed
+    }//GEN-LAST:event_txtFieldMiddleNameActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         newIdString = txtFieldId.getText();
         newIdInt = Integer.parseInt(newIdString);
         newFirstName = txtFieldFirstName.getText();
+        newMiddleName = txtFieldMiddleName.getText();
         newLastName = txtFieldLastName.getText();
+        newAddress = txtFieldAddress.getText();
+        newPlaceOfBirth = txtFieldPlaceOfBirth.getText();
+        newDateOfBirth = txtFieldDateOfBirth.getText();
+        newGender = txtFieldGender.getText();
+        newNationality = txtFieldNationality.getText();
+        newPhoneNumber = txtFieldPhoneNumber.getText();
+        newUsername = txtFieldUsername.getText();
 
-        String[] newRegDatas = {newFirstName, newLastName};
+        String[] newRegDatas = {newFirstName, newMiddleName, newLastName, newAddress, newPlaceOfBirth,
+            newDateOfBirth, newGender, newNationality, newPhoneNumber, newUsername};
+
         db.hm.replace(newIdInt, newRegDatas);
 
         JOptionPane.showMessageDialog(this, "Data updated successully!");
@@ -174,11 +365,50 @@ public class Update extends javax.swing.JFrame {
         newIdString = txtFieldId.getText();
         newIdInt = Integer.parseInt(newIdString);
 
-        db.hm.remove(newIdInt);
+        int confirmation = JOptionPane.showConfirmDialog(this, "This action cannot be undone. Are you sure you want to delete this data?",
+                "Delete Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        
+        if (confirmation == JOptionPane.YES_OPTION) {
+            db.hm.remove(newIdInt);
+            JOptionPane.showMessageDialog(this, "Data Successfully Deleted!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Delete action canceled.", "Canceled", JOptionPane.INFORMATION_MESSAGE);
+        }
 
-        JOptionPane.showMessageDialog(this, "Data Successfully Deleted!");
         showRegistration();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void txtFieldLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldLastNameActionPerformed
+
+    private void txtFieldAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldAddressActionPerformed
+
+    private void txtFieldPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldPhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldPhoneNumberActionPerformed
+
+    private void txtFieldDateOfBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDateOfBirthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldDateOfBirthActionPerformed
+
+    private void txtFieldPlaceOfBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldPlaceOfBirthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldPlaceOfBirthActionPerformed
+
+    private void txtFieldNationalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNationalityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldNationalityActionPerformed
+
+    private void txtFieldGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldGenderActionPerformed
+
+    private void txtFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldUsernameActionPerformed
     private void disposeForm() {
         this.dispose();
     }
@@ -222,10 +452,27 @@ public class Update extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtFieldAddress;
+    private javax.swing.JTextField txtFieldDateOfBirth;
     private javax.swing.JTextField txtFieldFirstName;
+    private javax.swing.JTextField txtFieldGender;
     private javax.swing.JTextField txtFieldId;
     private javax.swing.JTextField txtFieldLastName;
+    private javax.swing.JTextField txtFieldMiddleName;
+    private javax.swing.JTextField txtFieldNationality;
+    private javax.swing.JTextField txtFieldPhoneNumber;
+    private javax.swing.JTextField txtFieldPlaceOfBirth;
+    private javax.swing.JTextField txtFieldUsername;
     // End of variables declaration//GEN-END:variables
 }
