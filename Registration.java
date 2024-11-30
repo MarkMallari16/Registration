@@ -59,11 +59,12 @@ public class Registration extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         txtFieldUsername = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel1.setText("Basic Registration");
+        jLabel1.setText("Basic Registration in Java");
 
         addBtn.setBackground(new java.awt.Color(51, 51, 255));
         addBtn.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -168,6 +169,9 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel13.setText("Username");
 
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel2.setText("Mark Mallari");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,6 +226,10 @@ public class Registration extends javax.swing.JFrame {
                                 .addComponent(addBtn)
                                 .addGap(16, 16, 16)))))
                 .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(402, 402, 402))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +287,9 @@ public class Registration extends javax.swing.JFrame {
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -469,6 +479,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
