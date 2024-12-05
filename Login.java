@@ -8,14 +8,18 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-    
+
     private static final String username = "mark16", password = "markpogi123";
     public static String usernameTxtField;
     public static String passwordTxtField;
     public Registration reg;
-    
+    Database db = new Database();
+
     public Login() {
         initComponents();
+        db.addAdmin();
+        
+        System.out.println(db.hm.get(1001));
     }
 
     /**
@@ -103,7 +107,7 @@ public class Login extends javax.swing.JFrame {
         usernameTxtField = txtFieldUsername.getText();
         char[] passwordChars = txtFieldPassword.getPassword();
         passwordTxtField = new String(passwordChars);
-        
+
         if (usernameTxtField.equals(username) && passwordTxtField.equals(password)) {
             JOptionPane.showMessageDialog(this, "Login successful!");
             if (reg == null) {
