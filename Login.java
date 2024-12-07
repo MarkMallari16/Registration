@@ -8,7 +8,6 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-
     private static final String username = "mark16", password = "markpogi123";
     public static String usernameTxtField;
     public static String passwordTxtField;
